@@ -38,5 +38,5 @@ test('invalid JSON, authorization failure, and oversized responses are bounded a
 test('stalled GET expires and client shutdown aborts in-flight reads', async t => {
   const m = await mockController(t, () => {}), client = new PowerpackClient({ ...m.config, timeoutSeconds: 1 }); t.after(() => client.close());
   await assert.rejects(client.read('status'), /timeout/);
-  const read = client.read('status'); client.close(); await assert.rejects(read, /CONNECTION_ERROR/);
+  const read = client.read('status'); client.close(); await assert.rejects(read, /client is closed/);
 });

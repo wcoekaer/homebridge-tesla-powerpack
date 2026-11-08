@@ -71,6 +71,7 @@ export class PowerpackClient implements ReadOnlySource {
           finish(new Error(`GET ${path}: timeout`)); request?.destroy();
         }, this.config.timeoutSeconds * 1000);
         request.on('error', (error: NodeJS.ErrnoException) => {
+          if (this.#closed) { finish(new Error('Telemetry client is closed')); return; }
           // Do not log request options, headers, raw error messages, or response bodies.
           const code = /^[A-Z0-9_]+$/.test(error.code || '') ? error.code : 'CONNECTION_ERROR';
           finish(new Error(`GET ${path}: ${code}`));

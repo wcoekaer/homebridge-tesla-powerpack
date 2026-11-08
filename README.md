@@ -42,7 +42,7 @@ When data becomes stale, dependent sensors report a communication fault and reta
 
 Requires Homebridge **1.8+ or 2.x**, Node **22.12+, 24, or 26**, and network access from the Homebridge host to the controller's HTTPS telemetry port (normally **10443**). Development verification uses Homebridge 2.5.
 
-Build an installable archive from this repository:
+Download the installable `.tgz` from [GitHub Releases](https://github.com/wcoekaer/homebridge-tesla-powerpack/releases), or build an archive from this repository:
 
 ```sh
 git clone https://github.com/wcoekaer/homebridge-tesla-powerpack.git
@@ -149,6 +149,10 @@ npm pack --dry-run
 Tests exercise real local HTTPS and MQTT servers, CA/hostname checks, GET-only requests, rejected redirects, deadlines/response limits, credential uploads over the Homebridge UI IPC API, stale readings, battery thresholds, charging direction, Homebridge cache restoration, JPEG rendering, and encrypted camera streams that are decrypted and decoded back to an image. The child-bridge smoke check launches Homebridge in disposable storage with synthetic telemetry; it never contacts the real controller. No live credential is needed for tests.
 
 Actual Apple Home pairing, UI presentation on your devices, and remote playback through your home hub still need verification on the target installation.
+
+## GitHub releases
+
+For a new version, update package.json and the lockfile, add `releases/vX.Y.Z.md`, and commit the changes. Push an annotated `vX.Y.Z` tag matching the package version. The release workflow verifies the tag, runs the tests and child-bridge smoke check, builds the `.tgz`, and attaches it with `SHA256SUMS` to a GitHub release. It uses GitHub's workflow token; no personal token or npm credential is needed. A manual retry must select the version tag rather than a branch. The workflow does not publish to npm.
 
 ## License and references
 

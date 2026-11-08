@@ -1,0 +1,56 @@
+name: Release
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: release-${{ github.ref_name }}
+  cancel-in-progress: false
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+      - name: Validate version tag and release notes
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+          const { name, version } = require('./package.json');
+          const tag = process.env.GITHUB_REF_NAME;
+          if (process.env.GITHUB_REF_TYPE !== 'tag' || name !== '@wcoekaer/homebridge-tesla-powerpack' || !/^\d+\.\d+\.\d+$/.test(version) || tag !== `v${version}`) {
+            throw new Error('Select a stable version tag matching package.json');
+          }
+          if (!fs.readFileSync(`releases/${tag}.md`, 'utf8').trim()) throw new Error('Release notes are required');
+          NODE
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - run: npm ci --ignore-scripts
+      - run: npm test
+      - run: npm run test:child-bridge
+      - name: Build plugin archive and checksum
+        run: |
+          mkdir -p artifacts
+          npm pack --pack-destination artifacts
+          cd artifacts
+          sha256sum wcoekaer-homebridge-tesla-powerpack-*.tgz > SHA256SUMS
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            artifacts/wcoekaer-homebridge-tesla-powerpack-*.tgz artifacts/SHA256SUMS \
+            --verify-tag \
+            --title "Homebridge Tesla Powerpack $GITHUB_REF_NAME" \
+            --notes-file "releases/$GITHUB_REF_NAME.md" \
+            --latest

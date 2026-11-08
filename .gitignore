@@ -12,3 +12,6 @@ config.local.json
 secrets/
 pptoken
 ppcert
+npmtoken
+.npmrc
+test.log
