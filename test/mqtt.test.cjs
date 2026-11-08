@@ -1,0 +1,47 @@
+const { test } = require('node:test');
+const assert = require('node:assert/strict');
+const net = require('node:net');
+const mqtt = require('mqtt');
+const { settings } = require('../dist/config');
+const { demoReadings } = require('../dist/demo');
+const { makeView } = require('../dist/telemetry');
+const { TelemetryPublisher, exportState } = require('../dist/mqtt');
+const { waitFor } = require('./helpers.cjs');
+
+test('MQTT publishes state/raw data and availability, never subscribes, and marks stale values unknown', { timeout: 15000 }, async t => {
+  const { Aedes } = await import('aedes');
+  const broker = await Aedes.createBroker(), server = net.createServer(broker.handle);
+  await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
+  const url = `mqtt://127.0.0.1:${server.address().port}`;
+  const received = new Map(), subscriptions = [];
+  broker.on('subscribe', (topics, client) => subscriptions.push(client.id));
+  const observer = mqtt.connect(url, { clientId: 'test-observer' });
+  await new Promise(resolve => observer.once('connect', resolve));
+  observer.on('message', (topic, value) => received.set(topic, value.toString()));
+  await observer.subscribeAsync('tesla/test/#');
+  const config = settings({ tokenFile: '/private/sentinel-token', caFile: '/private/sentinel-ca', mqtt: { enabled: true, url, topicPrefix: 'tesla/test', clientId: 'powerpack-publisher' } });
+  const publisher = new TelemetryPublisher(config, { info() {}, warn() {} });
+  t.after(async () => { await publisher.stop(); await observer.endAsync(true); await new Promise(resolve => server.close(resolve)); await broker.close(); });
+  const now = Date.now(), readings = demoReadings(now);
+  publisher.update(makeView(readings, config, now, 1)); publisher.start();
+  await waitFor(() => received.has('tesla/test/raw/site'));
+  assert.equal(received.get('tesla/test/availability'), 'online');
+  let state = JSON.parse(received.get('tesla/test/state'));
+  assert.equal(state.stateOfEnergyPercent, 82.9); assert.equal(state.health.discharging, true);
+  assert.ok(!JSON.stringify([...received.values()]).includes('sentinel'));
+  assert.deepEqual(subscriptions, ['test-observer']);
+  const stale = makeView(readings, config, now + 91000, 2); publisher.update(stale);
+  await waitFor(() => JSON.parse(received.get('tesla/test/state')).available === false);
+  state = JSON.parse(received.get('tesla/test/state')); assert.equal(state.stateOfEnergyPercent, null); assert.equal(state.meters.battery.powerW, null);
+  assert.equal(received.get('tesla/test/availability'), 'offline');
+  publisher.update(makeView(demoReadings(), config, Date.now(), 3));
+  await waitFor(() => received.get('tesla/test/availability') === 'online');
+  await publisher.stop();
+  await waitFor(() => received.get('tesla/test/availability') === 'offline');
+});
+test('MQTT normalized export differentiates unavailable alerts from an empty list', () => {
+  const cfg = settings({ tokenFile: '/test/token', caFile: '/test/ca' });
+  assert.equal(exportState(makeView({}, cfg)).alerts, null);
+  const data = demoReadings(); data.alerts.value = [];
+  assert.deepEqual(exportState(makeView(data, cfg)).alerts, []);
+});

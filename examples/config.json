@@ -1,0 +1,25 @@
+{
+  "platform": "TeslaPowerpack",
+  "name": "Powerpack",
+  "host": "192.168.0.49",
+  "port": 10443,
+  "servername": "localhost",
+  "tokenFile": "/var/lib/homebridge/tesla-powerpack/credentials-example/token",
+  "caFile": "/var/lib/homebridge/tesla-powerpack/credentials-example/ca.pem",
+  "camera": {
+    "enabled": true,
+    "name": "Powerpack Dashboard"
+  },
+  "mqtt": {
+    "enabled": false,
+    "url": "mqtt://localhost:1883",
+    "topicPrefix": "tesla/powerpack",
+    "retain": true,
+    "raw": true
+  },
+  "batteryThresholds": [
+    20,
+    50,
+    80
+  ]
+}

@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#102731"/><stop offset=".55" stop-color="#09161f"/><stop offset="1" stop-color="#09131a"/></linearGradient>
+    <linearGradient id="cabinet"><stop stop-color="#d7e3e5"/><stop offset=".45" stop-color="#f1f5f4"/><stop offset="1" stop-color="#bdcfd2"/></linearGradient>
+    <linearGradient id="side"><stop stop-color="#708b96"/><stop offset="1" stop-color="#a1b7bf"/></linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <g font-family="Manrope, sans-serif">
+  <rect x="48" y="40" width="50" height="50" rx="14" fill="#71e6b3" fill-opacity=".1" stroke="#71e6b3" stroke-opacity=".35"/>
+  <path d="M76 48L62 67H73L68 82L84 61H74Z" fill="#71e6b3"/>
+  <text x="116" y="67" font-size="35" font-weight="700" fill="#edf4f4" text-anchor="start">Powerpack · Demo</text><text x="116" y="94" font-size="14" font-weight="700" fill="#91a8b4" text-anchor="start">TESLA POWERPACK  /  ENERGY OVERVIEW</text>
+  <rect x="1422" y="43" width="234" height="32" rx="16" fill="#71e6b3" fill-opacity=".08" stroke="#71e6b3" stroke-opacity=".3"/><text x="1539" y="65" font-size="15" font-weight="700" fill="#71e6b3" text-anchor="middle">ISLANDED</text>
+  <text x="1872" y="65" font-size="26" font-weight="700" fill="#edf4f4" text-anchor="end">07:11</text>
+  <text x="1872" y="91" font-size="14" font-weight="400" fill="#91a8b4" text-anchor="end">Nov 8, 2026</text>
+  <rect x="48" y="126" width="441" height="147" rx="22" fill="#101f29" stroke="#243742"/><text x="73" y="159" font-size="17" font-weight="700" fill="#91a8b4" text-anchor="start">STATE OF ENERGY</text><text x="73" y="222" font-size="51" font-weight="700" fill="#edf4f4" text-anchor="start">82.9</text><text x="463" y="216" font-size="22" font-weight="700" fill="#71e6b3" text-anchor="end">%</text><text x="73" y="251" font-size="16" font-weight="400" fill="#91a8b4" text-anchor="start">Reported battery state of energy</text>
+  <rect x="509" y="126" width="441" height="147" rx="22" fill="#101f29" stroke="#243742"/><text x="534" y="159" font-size="17" font-weight="700" fill="#91a8b4" text-anchor="start">STORED ENERGY</text><text x="534" y="222" font-size="51" font-weight="700" fill="#edf4f4" text-anchor="start">182.4</text><text x="924" y="216" font-size="22" font-weight="700" fill="#71e6b3" text-anchor="end">kWh</text><text x="534" y="251" font-size="16" font-weight="400" fill="#91a8b4" text-anchor="start">Nominal full pack  220.0 kWh</text>
+  <rect x="970" y="126" width="441" height="147" rx="22" fill="#101f29" stroke="#243742"/><text x="995" y="159" font-size="17" font-weight="700" fill="#91a8b4" text-anchor="start">BATTERY POWER</text><text x="995" y="222" font-size="51" font-weight="700" fill="#edf4f4" text-anchor="start">12.80</text><text x="1385" y="216" font-size="22" font-weight="700" fill="#81c8ed" text-anchor="end">kW</text><text x="995" y="251" font-size="16" font-weight="400" fill="#91a8b4" text-anchor="start">Discharging · positive battery power</text>
+  <rect x="1431" y="126" width="441" height="147" rx="22" fill="#101f29" stroke="#243742"/><text x="1456" y="159" font-size="17" font-weight="700" fill="#91a8b4" text-anchor="start">SOLAR POWER</text><text x="1456" y="222" font-size="51" font-weight="700" fill="#edf4f4" text-anchor="start">8.40</text><text x="1846" y="216" font-size="22" font-weight="700" fill="#ffc276" text-anchor="end">kW</text><text x="1456" y="251" font-size="16" font-weight="400" fill="#91a8b4" text-anchor="start">Measured generation</text>
+
+  <rect x="48" y="293" width="720" height="506" rx="22" fill="#101f29" stroke="#243742"/><text x="76" y="331" font-size="25" font-weight="700" fill="#edf4f4" text-anchor="start">Inside the Powerpack</text>
+  <text x="740" y="330" font-size="14" font-weight="700" fill="#91a8b4" text-anchor="end">BLOCK 1 / 1</text>
+  <ellipse cx="249" cy="726" rx="151" ry="18" fill="#000" opacity=".25"/>
+    <path d="M127 374L160 353H358L326 374Z" fill="#dce7e9"/>
+    <path d="M326 374L358 353V696L326 722Z" fill="url(#side)"/>
+    <rect x="127" y="374" width="199" height="348" rx="10" fill="url(#cabinet)"/>
+    <text x="227" y="401" font-size="17" font-weight="700" fill="#354951" text-anchor="middle">POWERPACK</text>
+    <rect x="142" y="418" width="170" height="238" rx="9" fill="#142630" stroke="#58717c"/>
+    <rect x="150" y="426" width="154" height="222" rx="5" fill="#0b1921"/>
+    <rect x="112" y="435" width="4" height="250" rx="2" fill="#243742"/>
+    <rect x="112" y="477.75" width="4" height="207.25" rx="2" fill="#71e6b3"/>
+    <circle cx="298" cy="395" r="3.5" fill="#71e6b3"/><rect x="158" y="436" width="30" height="42" rx="3" fill="#28424b" stroke="#48646e"/>
+      <path d="M163 444h20m-20 5h20m-20 5h20" stroke="#68858d" stroke-opacity=".6"/>
+      <text x="173" y="470" font-size="10" font-weight="700" fill="#bed1d5" text-anchor="middle">01</text><rect x="194" y="436" width="30" height="42" rx="3" fill="#28424b" stroke="#48646e"/>
+      <path d="M199 444h20m-20 5h20m-20 5h20" stroke="#68858d" stroke-opacity=".6"/>
+      <text x="209" y="470" font-size="10" font-weight="700" fill="#bed1d5" text-anchor="middle">02</text><rect x="230" y="436" width="30" height="42" rx="3" fill="#28424b" stroke="#48646e"/>
+      <path d="M235 444h20m-20 5h20m-20 5h20" stroke="#68858d" stroke-opacity=".6"/>
+      <text x="245" y="470" font-size="10" font-weight="700" fill="#bed1d5" text-anchor="middle">03</text><rect x="266" y="436" width="30" height="42" rx="3" fill="#28424b" stroke="#48646e"/>
+      <path d="M271 444h20m-20 5h20m-20 5h20" stroke="#68858d" stroke-opacity=".6"/>
+      <text x="281" y="470" font-size="10" font-weight="700" fill="#bed1d5" text-anchor="middle">04</text><rect x="158" y="487" width="30" height="42" rx="3" fill="#28424b" stroke="#48646e"/>
+      <path d="M163 495h20m-20 5h20m-20 5h20" stroke="#68858d" stroke-opacity=".6"/>
+      <text x="173" y="521" font-size="10" font-weight="700" fill="#bed1d5" text-anchor="middle">05</text><rect x="194" y="487" width="30" height="42" rx="3" fill="#28424b" stroke="#48646e"/>
+      <path d="M199 495h20m-20 5h20m-20 5h20" stroke="#68858d" stroke-opacity=".6"/>
+      <text x="209" y="521" font-size="10" font-weight="700" fill="#bed1d5" text-anchor="middle">06</text><rect x="230" y="487" width="30" height="42" rx="3" fill="#28424b" stroke="#48646e"/>
+      <path d="M235 495h20m-20 5h20m-20 5h20" stroke="#68858d" stroke-opacity=".6"/>
+      <text x="245" y="521" font-size="10" font-weight="700" fill="#bed1d5" text-anchor="middle">07</text><rect x="266" y="487" width="30" height="42" rx="3" fill="#28424b" stroke="#48646e"/>
+      <path d="M271 495h20m-20 5h20m-20 5h20" stroke="#68858d" stroke-opacity=".6"/>
+      <text x="281" y="521" font-size="10" font-weight="700" fill="#bed1d5" text-anchor="middle">08</text><rect x="158" y="538" width="30" height="42" rx="3" fill="#28424b" stroke="#48646e"/>
+      <path d="M163 546h20m-20 5h20m-20 5h20" stroke="#68858d" stroke-opacity=".6"/>
+      <text x="173" y="572" font-size="10" font-weight="700" fill="#bed1d5" text-anchor="middle">09</text><rect x="194" y="538" width="30" height="42" rx="3" fill="#28424b" stroke="#48646e"/>
+      <path d="M199 546h20m-20 5h20m-20 5h20" stroke="#68858d" stroke-opacity=".6"/>
+      <text x="209" y="572" font-size="10" font-weight="700" fill="#bed1d5" text-anchor="middle">10</text><rect x="230" y="538" width="30" height="42" rx="3" fill="#28424b" stroke="#48646e"/>
+      <path d="M235 546h20m-20 5h20m-20 5h20" stroke="#68858d" stroke-opacity=".6"/>
+      <text x="245" y="572" font-size="10" font-weight="700" fill="#bed1d5" text-anchor="middle">11</text><rect x="266" y="538" width="30" height="42" rx="3" fill="#28424b" stroke="#48646e"/>
+      <path d="M271 546h20m-20 5h20m-20 5h20" stroke="#68858d" stroke-opacity=".6"/>
+      <text x="281" y="572" font-size="10" font-weight="700" fill="#bed1d5" text-anchor="middle">12</text><rect x="158" y="589" width="30" height="42" rx="3" fill="#28424b" stroke="#48646e"/>
+      <path d="M163 597h20m-20 5h20m-20 5h20" stroke="#68858d" stroke-opacity=".6"/>
+      <text x="173" y="623" font-size="10" font-weight="700" fill="#bed1d5" text-anchor="middle">13</text><rect x="194" y="589" width="30" height="42" rx="3" fill="#28424b" stroke="#48646e"/>
+      <path d="M199 597h20m-20 5h20m-20 5h20" stroke="#68858d" stroke-opacity=".6"/>
+      <text x="209" y="623" font-size="10" font-weight="700" fill="#bed1d5" text-anchor="middle">14</text><rect x="230" y="589" width="30" height="42" rx="3" fill="#28424b" stroke="#48646e"/>
+      <path d="M235 597h20m-20 5h20m-20 5h20" stroke="#68858d" stroke-opacity=".6"/>
+      <text x="245" y="623" font-size="10" font-weight="700" fill="#bed1d5" text-anchor="middle">15</text><rect x="266" y="589" width="30" height="42" rx="3" fill="#28424b" stroke="#48646e"/>
+      <path d="M271 597h20m-20 5h20m-20 5h20" stroke="#68858d" stroke-opacity=".6"/>
+      <text x="281" y="623" font-size="10" font-weight="700" fill="#bed1d5" text-anchor="middle">16</text><path d="M148 673h157m-157 6h157m-157 6h157" stroke="#78949d" stroke-width="2"/>
+    <rect x="147" y="701" width="159" height="6" rx="3" fill="#839da5"/>
+    <path d="M326 612h38v62h27" fill="none" stroke="#81c8ed" stroke-width="2"/>
+    <rect x="383" y="639" width="106" height="64" rx="10" fill="#182d37" stroke="#243742"/>
+    <rect x="501" y="639" width="106" height="64" rx="10" fill="#182d37" stroke="#243742"/>
+    <text x="436" y="665" font-size="20" font-weight="700" fill="#81c8ed" text-anchor="middle">AC</text><text x="554" y="665" font-size="20" font-weight="700" fill="#81c8ed" text-anchor="middle">AC</text>
+    <text x="436" y="688" font-size="11" font-weight="700" fill="#91a8b4" text-anchor="middle">INVERTER</text><text x="554" y="688" font-size="11" font-weight="700" fill="#91a8b4" text-anchor="middle">INVERTER</text>
+    <text x="383" y="732" font-size="14" font-weight="400" fill="#91a8b4" text-anchor="start">Inverters shown schematically</text>
+  <text x="383" y="388" font-size="15" font-weight="700" fill="#91a8b4" text-anchor="start">BATTERY PODS</text>
+  <text x="383" y="435" font-size="43" font-weight="700" fill="#edf4f4" text-anchor="start">16</text><text x="458" y="435" font-size="19" font-weight="400" fill="#91a8b4" text-anchor="start">reported</text>
+  <text x="383" y="468" font-size="23" font-weight="700" fill="#edf4f4" text-anchor="start">0 faulted</text>
+  <path d="M383 489h330" stroke="#243742"/>
+  <text x="383" y="520" font-size="15" font-weight="700" fill="#91a8b4" text-anchor="start">INVERTERS</text>
+  <text x="383" y="562" font-size="29" font-weight="700" fill="#edf4f4" text-anchor="start">2 connected</text>
+  <text x="383" y="592" font-size="20" font-weight="400" fill="#91a8b4" text-anchor="start">0 faulted  ·  Active</text>
+  <text x="76" y="765" font-size="17" font-weight="700" fill="#71e6b3" text-anchor="start">VF Mode  ·  OK  ·  Reachable</text>
+  <text x="76" y="786" font-size="13" font-weight="400" fill="#91a8b4" text-anchor="start">Schematic layout. Individual pod temperatures / voltages unavailable.</text>
+
+  <rect x="788" y="293" width="470" height="506" rx="22" fill="#101f29" stroke="#243742"/><text x="816" y="331" font-size="25" font-weight="700" fill="#edf4f4" text-anchor="start">Site &amp; power limits</text>
+  <rect x="816" y="353" width="204" height="32" rx="16" fill="#71e6b3" fill-opacity=".08" stroke="#71e6b3" stroke-opacity=".3"/><text x="918" y="375" font-size="15" font-weight="700" fill="#71e6b3" text-anchor="middle">ISLAND OPERATION</text>
+  <text x="1230" y="375" font-size="16" font-weight="400" fill="#91a8b4" text-anchor="end">0 grid faults</text>
+  <text x="816" y="414" font-size="13" font-weight="700" fill="#ffc276" text-anchor="start">SOLAR</text><text x="1022" y="414" font-size="13" font-weight="700" fill="#71e6b3" text-anchor="start">BATTERY</text><text x="1230" y="414" font-size="13" font-weight="700" fill="#81c8ed" text-anchor="end">SITE</text>
+  <path d="M829 433h169m39 0h165" stroke="#243742" stroke-width="3"/>
+  <circle cx="835" cy="433" r="7" fill="#ffc276"/>
+  <rect x="1001" y="423" width="25" height="20" rx="3" fill="#71e6b3"/>
+  <path d="M1205 425l11 8-11 8" fill="none" stroke="#81c8ed" stroke-width="2"/>
+  <text x="816" y="467" font-size="19" font-weight="700" fill="#ffc276" text-anchor="start">8.40 kW</text><text x="1022" y="467" font-size="19" font-weight="700" fill="#71e6b3" text-anchor="start">12.80 kW</text><text x="1230" y="467" font-size="13" font-weight="400" fill="#91a8b4" text-anchor="end">No load meter</text>
+  <path d="M816 487h414" stroke="#243742"/>
+  <text x="816" y="524" font-size="18" font-weight="400" fill="#91a8b4" text-anchor="start">Charge available</text><text x="1230" y="524" font-size="21" font-weight="700" fill="#81c8ed" text-anchor="end">67.5 kW</text><text x="816" y="565" font-size="18" font-weight="400" fill="#91a8b4" text-anchor="start">Discharge available</text><text x="1230" y="565" font-size="21" font-weight="700" fill="#71e6b3" text-anchor="end">65.8 kW</text><text x="816" y="606" font-size="18" font-weight="400" fill="#91a8b4" text-anchor="start">Apparent limit</text><text x="1230" y="606" font-size="21" font-weight="700" fill="#edf4f4" text-anchor="end">143.0 kVA</text><text x="816" y="647" font-size="18" font-weight="400" fill="#91a8b4" text-anchor="start">Remaining at max power</text><text x="1230" y="647" font-size="21" font-weight="700" fill="#edf4f4" text-anchor="end">181.2 kWh</text><text x="816" y="688" font-size="18" font-weight="400" fill="#91a8b4" text-anchor="start">Energy to charge</text><text x="1230" y="688" font-size="21" font-weight="700" fill="#edf4f4" text-anchor="end">37.6 kWh</text>
+  <path d="M816 713h414" stroke="#243742"/>
+  <text x="816" y="743" font-size="16" font-weight="400" fill="#91a8b4" text-anchor="start">Command source: NothingActive</text>
+  <text x="816" y="775" font-size="16" font-weight="400" fill="#91a8b4" text-anchor="start">Targets  0.0 kW / 0.0 kvar</text>
+
+  <rect x="1278" y="293" width="594" height="506" rx="22" fill="#101f29" stroke="#243742"/><text x="1306" y="331" font-size="25" font-weight="700" fill="#edf4f4" text-anchor="start">Electrical telemetry</text>
+  <text x="1605" y="379" font-size="15" font-weight="700" fill="#71e6b3" text-anchor="end">BATTERY</text><text x="1844" y="379" font-size="15" font-weight="700" fill="#ffc276" text-anchor="end">SOLAR</text>
+  <path d="M1306 397h538" stroke="#243742"/>
+  <text x="1306" y="433" font-size="20" font-weight="400" fill="#91a8b4" text-anchor="start">Voltage</text><text x="1605" y="433" font-size="22" font-weight="700" fill="#edf4f4" text-anchor="end">480.1 V</text><text x="1844" y="433" font-size="22" font-weight="700" fill="#edf4f4" text-anchor="end">480.1 V</text><text x="1306" y="475" font-size="20" font-weight="400" fill="#91a8b4" text-anchor="start">Current</text><text x="1605" y="475" font-size="22" font-weight="700" fill="#edf4f4" text-anchor="end">15.42 A</text><text x="1844" y="475" font-size="22" font-weight="700" fill="#edf4f4" text-anchor="end">10.12 A</text><text x="1306" y="517" font-size="20" font-weight="400" fill="#91a8b4" text-anchor="start">Frequency</text><text x="1605" y="517" font-size="22" font-weight="700" fill="#edf4f4" text-anchor="end">60.01 Hz</text><text x="1844" y="517" font-size="22" font-weight="700" fill="#edf4f4" text-anchor="end">60.01 Hz</text><text x="1306" y="559" font-size="20" font-weight="400" fill="#91a8b4" text-anchor="start">Reactive</text><text x="1605" y="559" font-size="22" font-weight="700" fill="#edf4f4" text-anchor="end">-0.04 kvar</text><text x="1844" y="559" font-size="22" font-weight="700" fill="#edf4f4" text-anchor="end">-0.04 kvar</text><text x="1306" y="601" font-size="20" font-weight="400" fill="#91a8b4" text-anchor="start">Apparent</text><text x="1605" y="601" font-size="22" font-weight="700" fill="#edf4f4" text-anchor="end">12.81 kVA</text><text x="1844" y="601" font-size="22" font-weight="700" fill="#edf4f4" text-anchor="end">8.41 kVA</text><text x="1306" y="643" font-size="20" font-weight="400" fill="#91a8b4" text-anchor="start">Imported</text><text x="1605" y="643" font-size="22" font-weight="700" fill="#edf4f4" text-anchor="end">118.90 MWh</text><text x="1844" y="643" font-size="22" font-weight="700" fill="#edf4f4" text-anchor="end">0.00 MWh</text><text x="1306" y="685" font-size="20" font-weight="400" fill="#91a8b4" text-anchor="start">Exported</text><text x="1605" y="685" font-size="22" font-weight="700" fill="#edf4f4" text-anchor="end">60.50 MWh</text><text x="1844" y="685" font-size="22" font-weight="700" fill="#edf4f4" text-anchor="end">188.60 MWh</text>
+  <path d="M1306 715h538" stroke="#243742"/>
+  <text x="1306" y="746" font-size="16" font-weight="400" fill="#91a8b4" text-anchor="start">Battery current  ·  Solar current</text>
+  <text x="1306" y="776" font-size="15" font-weight="400" fill="#91a8b4" text-anchor="start">Meters: battery, solar</text>
+
+  <rect x="48" y="819" width="850" height="197" rx="22" fill="#101f29" stroke="#243742"/><text x="76" y="854" font-size="23" font-weight="700" fill="#edf4f4" text-anchor="start">Power trend</text>
+  <text x="871" y="854" font-size="14" font-weight="700" fill="#91a8b4" text-anchor="end">BATTERY  /  SOLAR  ·  kW</text>
+  <path d="M76 967h795" stroke="#243742" stroke-dasharray="4 5"/><path d="M76.0 915.2 L82.6 912.4 L89.3 909.6 L95.9 907.0 L102.5 904.6 L109.1 902.4 L115.8 900.5 L122.4 898.9 L129.0 897.6 L135.6 896.6 L142.3 895.9 L148.9 895.4 L155.5 895.1 L162.1 895.0 L168.8 895.0 L175.4 895.0 L182.0 895.0 L188.6 895.0 L195.3 894.8 L201.9 894.7 L208.5 894.4 L215.1 894.0 L221.8 893.6 L228.4 893.1 L235.0 892.7 L241.6 892.3 L248.3 892.1 L254.9 892.1 L261.5 892.2 L268.1 892.7 L274.8 893.5 L281.4 894.6 L288.0 896.0 L294.6 897.8 L301.3 899.9 L307.9 902.2 L314.5 904.7 L321.1 907.4 L327.8 910.2 L334.4 913.0 L341.0 915.7 L347.6 918.3 L354.3 920.8 L360.9 923.0 L367.5 924.9 L374.1 926.6 L380.8 928.0 L387.4 929.2 L394.0 930.1 L400.6 930.8 L407.3 931.4 L413.9 931.8 L420.5 932.2 L427.1 932.5 L433.8 933.0 L440.4 933.4 L447.0 934.0 L453.6 934.7 L460.3 935.4 L466.9 936.3 L473.5 937.2 L480.1 938.1 L486.8 938.9 L493.4 939.7 L500.0 940.3 L506.6 940.7 L513.3 940.9 L519.9 940.7 L526.5 940.2 L533.1 939.3 L539.8 938.1 L546.4 936.6 L553.0 934.7 L559.6 932.6 L566.3 930.2 L572.9 927.7 L579.5 925.0 L586.1 922.4 L592.8 919.8 L599.4 917.3 L606.0 914.9 L612.6 912.7 L619.3 910.8 L625.9 909.1 L632.5 907.7 L639.1 906.5 L645.8 905.4 L652.4 904.6 L659.0 903.8 L665.6 903.1 L672.3 902.4 L678.9 901.7 L685.5 901.0 L692.1 900.1 L698.8 899.1 L705.4 898.0 L712.0 896.8 L718.6 895.5 L725.3 894.2 L731.9 892.8 L738.5 891.5 L745.1 890.3 L751.8 889.3 L758.4 888.5 L765.0 888.0 L771.6 887.9 L778.3 888.1 L784.9 888.6 L791.5 889.5 L798.1 890.8 L804.8 892.4 L811.4 894.3 L818.0 896.4 L824.6 898.7 L831.3 901.1 L837.9 903.6 L844.5 906.0 L851.1 908.3 L857.8 910.4 L864.4 912.5 L871.0 914.3 " fill="none" stroke="#71e6b3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M76.0 934.3 L82.6 933.9 L89.3 933.5 L95.9 933.1 L102.5 932.7 L109.1 932.4 L115.8 932.0 L122.4 931.6 L129.0 931.2 L135.6 930.8 L142.3 930.5 L148.9 930.1 L155.5 929.7 L162.1 929.4 L168.8 929.0 L175.4 928.6 L182.0 928.3 L188.6 927.9 L195.3 927.6 L201.9 927.3 L208.5 926.9 L215.1 926.6 L221.8 926.3 L228.4 926.0 L235.0 925.7 L241.6 925.4 L248.3 925.1 L254.9 924.8 L261.5 924.5 L268.1 924.3 L274.8 924.0 L281.4 923.7 L288.0 923.5 L294.6 923.3 L301.3 923.0 L307.9 922.8 L314.5 922.6 L321.1 922.4 L327.8 922.2 L334.4 922.1 L341.0 921.9 L347.6 921.7 L354.3 921.6 L360.9 921.5 L367.5 921.3 L374.1 921.2 L380.8 921.1 L387.4 921.0 L394.0 920.9 L400.6 920.9 L407.3 920.8 L413.9 920.8 L420.5 920.7 L427.1 920.7 L433.8 920.7 L440.4 920.7 L447.0 920.7 L453.6 920.7 L460.3 920.7 L466.9 920.8 L473.5 920.8 L480.1 920.9 L486.8 920.9 L493.4 921.0 L500.0 921.1 L506.6 921.2 L513.3 921.3 L519.9 921.5 L526.5 921.6 L533.1 921.7 L539.8 921.9 L546.4 922.1 L553.0 922.3 L559.6 922.4 L566.3 922.6 L572.9 922.8 L579.5 923.1 L586.1 923.3 L592.8 923.5 L599.4 923.8 L606.0 924.0 L612.6 924.3 L619.3 924.5 L625.9 924.8 L632.5 925.1 L639.1 925.4 L645.8 925.7 L652.4 926.0 L659.0 926.3 L665.6 926.6 L672.3 926.9 L678.9 927.3 L685.5 927.6 L692.1 928.0 L698.8 928.3 L705.4 928.6 L712.0 929.0 L718.6 929.4 L725.3 929.7 L731.9 930.1 L738.5 930.5 L745.1 930.8 L751.8 931.2 L758.4 931.6 L765.0 932.0 L771.6 932.4 L778.3 932.8 L784.9 933.1 L791.5 933.5 L798.1 933.9 L804.8 934.3 L811.4 934.7 L818.0 935.1 L824.6 935.5 L831.3 935.9 L837.9 936.3 L844.5 936.6 L851.1 937.0 L857.8 937.4 L864.4 937.8 L871.0 938.2 " fill="none" stroke="#ffc276" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><text x="76" y="992" font-size="15" font-weight="400" fill="#91a8b4" text-anchor="start">30 min of locally collected data</text><text x="871" y="992" font-size="13" font-weight="700" fill="#91a8b4" text-anchor="end">NOW</text>
+  <rect x="918" y="819" width="954" height="197" rx="22" fill="#101f29" stroke="#243742"/><text x="946" y="854" font-size="23" font-weight="700" fill="#edf4f4" text-anchor="start">Controller alerts</text>
+  <text x="1844" y="854" font-size="13" font-weight="700" fill="#91a8b4" text-anchor="end">1 REPORTED  ·  NO EVENT TIMESTAMPS</text>
+  <circle cx="951" cy="886" r="4" fill="#ffc276"/><text x="966" y="892" font-size="18" font-weight="700" fill="#edf4f4" text-anchor="start">Smart Inverter Active</text><text x="1844" y="892" font-size="14" font-weight="400" fill="#91a8b4" text-anchor="end">Demonstration alert</text>
+  <text x="946" y="998" font-size="14" font-weight="400" fill="#91a8b4" text-anchor="start">Alert records are shown separately from current block fault counts.</text>
+  <text x="48" y="1053" font-size="17" font-weight="400" fill="#91a8b4" text-anchor="start">LOCAL TELEMETRY  ·  Status 0s ago  ·  All 7 sources current</text>
+  <text x="1872" y="1053" font-size="15" font-weight="700" fill="#91a8b4" text-anchor="end">FW 26.10.4-demo  ·  READ ONLY</text>
+  </g></svg>

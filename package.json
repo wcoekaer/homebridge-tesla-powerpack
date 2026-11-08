@@ -1,0 +1,69 @@
+{
+  "name": "@wcoekaer/homebridge-tesla-powerpack",
+  "version": "0.1.0",
+  "description": "Read-only Tesla Powerpack telemetry, HomeKit health sensors, and a graphical dashboard camera.",
+  "license": "MIT",
+  "keywords": [
+    "homebridge-plugin",
+    "tesla",
+    "powerpack",
+    "homekit",
+    "camera",
+    "telemetry",
+    "supports-hap"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "engines": {
+    "node": "^22.12.0 || ^24.0.0 || ^26.0.0",
+    "homebridge": ">=1.8.0 <3"
+  },
+  "files": [
+    "dist",
+    "assets",
+    "config.schema.json",
+    "examples",
+    "README.md",
+    "LICENSE",
+    "THIRD-PARTY-NOTICES.md",
+    "homebridge-ui"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "npm run build && node --test test/*.test.cjs",
+    "preview": "npm run build && node dist/cli.js preview",
+    "probe": "npm run build && node dist/cli.js probe",
+    "prepack": "npm run build",
+    "test:child-bridge": "npm run build && node scripts/smoke-child-bridge.cjs"
+  },
+  "dependencies": {
+    "@homebridge/plugin-ui-utils": "^2.2.7",
+    "@resvg/resvg-js": "^2.6.2",
+    "mqtt": "^5.16.1",
+    "sharp": "^0.35.5"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "aedes": "^1.2.0",
+    "homebridge": "^2.5.0",
+    "typescript": "^7.0.2"
+  },
+  "optionalDependencies": {
+    "ffmpeg-for-homebridge": "^2.2.2"
+  },
+  "allowScripts": {
+    "ffmpeg-for-homebridge": true
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wcoekaer/homebridge-tesla-powerpack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wcoekaer/homebridge-tesla-powerpack/issues"
+  },
+  "homepage": "https://github.com/wcoekaer/homebridge-tesla-powerpack#readme"
+}

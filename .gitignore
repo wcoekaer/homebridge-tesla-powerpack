@@ -1,0 +1,14 @@
+node_modules/
+dist/
+*.tgz
+artifacts/
+.homebridge-test/
+coverage/
+.DS_Store
+*.pem
+*.key
+.env*
+config.local.json
+secrets/
+pptoken
+ppcert

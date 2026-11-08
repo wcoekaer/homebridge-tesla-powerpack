@@ -1,0 +1,307 @@
+{
+  "pluginAlias": "TeslaPowerpack",
+  "pluginType": "platform",
+  "singular": true,
+  "customUi": true,
+  "headerDisplay": "Read-only local Powerpack telemetry. No controller write operations.",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Accessory name",
+        "type": "string",
+        "maxLength": 50,
+        "default": "Powerpack"
+      },
+      "host": {
+        "title": "Site controller hostname / IP",
+        "type": "string",
+        "required": true,
+        "description": "Address reachable from the Homebridge host. Enter the port separately.",
+        "default": "192.168.0.49"
+      },
+      "port": {
+        "title": "Controller HTTPS port",
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 65535,
+        "default": 10443
+      },
+      "servername": {
+        "title": "TLS certificate hostname",
+        "type": "string",
+        "description": "Name listed in the controller certificate. The connection still goes to the address above; TLS verification stays enabled.",
+        "default": "localhost"
+      },
+      "tokenFile": {
+        "title": "Token file on Homebridge host",
+        "type": "string",
+        "required": true,
+        "description": "Filled automatically by Store credentials above. For manual installs, use an absolute path."
+      },
+      "caFile": {
+        "title": "PEM CA file on Homebridge host",
+        "type": "string",
+        "required": true,
+        "description": "Filled automatically by Store credentials above. No credentials are bundled with this plugin."
+      },
+      "pollIntervalSeconds": {
+        "title": "Poll interval (seconds)",
+        "type": "integer",
+        "minimum": 10,
+        "maximum": 300,
+        "default": 15
+      },
+      "staleAfterSeconds": {
+        "title": "Mark telemetry stale after (seconds)",
+        "type": "integer",
+        "minimum": 30,
+        "maximum": 1800,
+        "description": "At least twice the poll interval. Individual meter timestamps are checked too.",
+        "default": 90
+      },
+      "timeoutSeconds": {
+        "title": "GET request timeout (seconds)",
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 20,
+        "default": 5
+      },
+      "lowBatteryPercent": {
+        "title": "Low battery threshold (%)",
+        "type": "number",
+        "minimum": 0,
+        "maximum": 99,
+        "default": 15
+      },
+      "lowBatteryRecoveryPercent": {
+        "title": "Low battery recovery (%)",
+        "type": "number",
+        "minimum": 1,
+        "maximum": 100,
+        "default": 20
+      },
+      "sensors": {
+        "type": "object",
+        "properties": {
+          "islanded": {
+            "title": "Islanded",
+            "type": "boolean",
+            "default": true
+          },
+          "lowBattery": {
+            "title": "Battery level and low-battery sensor",
+            "type": "boolean",
+            "default": true
+          },
+          "equipmentFault": {
+            "title": "Equipment Fault",
+            "type": "boolean",
+            "default": true
+          },
+          "unreachable": {
+            "title": "Monitor Unreachable",
+            "type": "boolean",
+            "default": true
+          },
+          "charging": {
+            "title": "Charging",
+            "type": "boolean",
+            "default": true
+          },
+          "discharging": {
+            "title": "Discharging",
+            "type": "boolean",
+            "default": true
+          }
+        }
+      },
+      "camera": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "title": "Enable dashboard camera",
+            "type": "boolean",
+            "default": true
+          },
+          "name": {
+            "title": "Camera name",
+            "type": "string",
+            "default": "Powerpack Dashboard"
+          },
+          "maxStreams": {
+            "title": "Concurrent camera streams",
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 4,
+            "default": 2
+          },
+          "ffmpegPath": {
+            "title": "FFmpeg path (optional)",
+            "type": "string",
+            "description": "Leave blank to use bundled FFmpeg or the system executable."
+          }
+        }
+      },
+      "mqtt": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "title": "Enable MQTT telemetry export",
+            "type": "boolean",
+            "default": false
+          },
+          "url": {
+            "title": "MQTT broker URL",
+            "type": "string",
+            "description": "mqtt://hostname:1883 or mqtts://hostname:8883. This must be your MQTT broker, not the Powerpack controller.",
+            "default": "mqtt://localhost:1883"
+          },
+          "username": {
+            "title": "MQTT username",
+            "type": "string"
+          },
+          "password": {
+            "title": "MQTT password",
+            "type": "string",
+            "format": "password",
+            "description": "Stored in Homebridge config.json; never included in published telemetry."
+          },
+          "topicPrefix": {
+            "title": "MQTT topic prefix",
+            "type": "string",
+            "description": "Exports /state, /availability, and optional /raw/* topics. Use a unique prefix per site.",
+            "default": "tesla/powerpack"
+          },
+          "clientId": {
+            "title": "MQTT client ID (optional)",
+            "type": "string",
+            "description": "A stable unique ID is generated when blank."
+          },
+          "retain": {
+            "title": "Retain latest telemetry",
+            "type": "boolean",
+            "default": true
+          },
+          "raw": {
+            "title": "Export all raw telemetry fields",
+            "type": "boolean",
+            "description": "Includes device identifiers and diagnostic details, with freshness and timestamps. Never includes credentials.",
+            "default": true
+          },
+          "caFile": {
+            "title": "MQTT CA file (optional)",
+            "type": "string",
+            "description": "Absolute path to a custom broker CA for mqtts://. Otherwise system trust is used. TLS verification is always enabled."
+          }
+        }
+      },
+      "batteryThresholds": {
+        "title": "Battery automation thresholds (%)",
+        "type": "array",
+        "default": [
+          20,
+          50,
+          80
+        ],
+        "maxItems": 10,
+        "uniqueItems": true,
+        "items": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 99
+        },
+        "description": "Creates read-only contact sensors for Apple Home automations. Opens at or below each level; closes 2 percentage points above it. Empty disables these sensors."
+      },
+      "powerActivityThresholdWatts": {
+        "title": "Charging / discharging deadband (watts)",
+        "type": "number",
+        "default": 100,
+        "minimum": 1,
+        "maximum": 10000,
+        "description": "Both activity sensors are closed within \u00b1 this measured battery power."
+      }
+    }
+  },
+  "form": [
+    {
+      "type": "fieldset",
+      "title": "Site controller",
+      "items": [
+        "name",
+        "host",
+        "port",
+        "servername"
+      ]
+    },
+    {
+      "type": "fieldset",
+      "title": "HomeKit sensors",
+      "items": [
+        "sensors.islanded",
+        "sensors.lowBattery",
+        "sensors.equipmentFault",
+        "sensors.unreachable",
+        "lowBatteryPercent",
+        "lowBatteryRecoveryPercent",
+        "sensors.charging",
+        "sensors.discharging",
+        "batteryThresholds",
+        "powerActivityThresholdWatts"
+      ],
+      "expandable": true,
+      "expanded": false
+    },
+    {
+      "type": "fieldset",
+      "title": "Dashboard camera",
+      "items": [
+        "camera.enabled",
+        "camera.name"
+      ]
+    },
+    {
+      "type": "fieldset",
+      "title": "MQTT export",
+      "items": [
+        "mqtt.enabled",
+        "mqtt.url",
+        "mqtt.username",
+        {
+          "key": "mqtt.password",
+          "type": "password"
+        },
+        "mqtt.topicPrefix",
+        "mqtt.retain",
+        "mqtt.raw",
+        "mqtt.clientId",
+        "mqtt.caFile"
+      ],
+      "expandable": true,
+      "expanded": false
+    },
+    {
+      "type": "fieldset",
+      "title": "Credential file paths",
+      "items": [
+        "tokenFile",
+        "caFile"
+      ],
+      "expandable": true,
+      "expanded": false
+    },
+    {
+      "type": "fieldset",
+      "title": "Advanced",
+      "items": [
+        "pollIntervalSeconds",
+        "staleAfterSeconds",
+        "timeoutSeconds",
+        "camera.maxStreams",
+        "camera.ffmpegPath"
+      ],
+      "expandable": true,
+      "expanded": false
+    }
+  ]
+}

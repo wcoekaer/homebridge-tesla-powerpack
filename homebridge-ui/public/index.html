@@ -1,0 +1,36 @@
+<style>
+  .pp-setup { max-width: 920px; margin: 0 auto 24px; }
+  .pp-hero { padding: 24px; border-radius: 16px; background: #102731; color: #edf4f4; margin-bottom: 20px; }
+  .pp-hero h2 { margin: 0 0 8px; font-size: 25px; }
+  .pp-hero p { margin: 0; color: #b5cbd1; }
+  .pp-upload { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .pp-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0; }
+  #pp-status { min-height: 24px; overflow-wrap: anywhere; }
+  @media(max-width: 600px) { .pp-upload { grid-template-columns: 1fr; } }
+</style>
+<div class="pp-setup">
+  <div class="pp-hero">
+    <h2>Tesla Powerpack</h2>
+    <p>A live energy overview in Apple Home. Local telemetry, a dashboard camera, and optional MQTT export.</p>
+  </div>
+  <h5>Controller credentials</h5>
+  <p>Choose the PEM CA certificate and token supplied by Tesla. They are stored privately on your Homebridge host; the configuration keeps only their file paths.</p>
+  <div class="pp-upload">
+    <div>
+      <label for="pp-pem" class="form-label">PEM CA certificate</label>
+      <input id="pp-pem" type="file" class="form-control" aria-describedby="pp-help">
+    </div>
+    <div>
+      <label for="pp-token" class="form-label">Bearer token file</label>
+      <input id="pp-token" type="file" class="form-control" aria-describedby="pp-help">
+    </div>
+  </div>
+  <small id="pp-help" class="text-muted">Extensionless files are supported. Upload both files when replacing credentials. Nothing is uploaded to the Powerpack.</small>
+  <div class="pp-actions">
+    <button id="pp-upload" class="btn btn-primary" type="button">Store credentials</button>
+    <button id="pp-test" class="btn btn-outline-primary" type="button">Test telemetry GET</button>
+  </div>
+  <p id="pp-status" role="status" aria-live="polite"></p>
+  <p class="text-muted">Set the controller address and MQTT options below, then Save and restart the child bridge. For a new installation, use the plugin menu’s Set Up Child Bridge option and pair its camera and sensors in Apple Home.</p>
+</div>
+<script src="setup.js"></script>
