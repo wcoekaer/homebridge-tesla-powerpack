@@ -152,7 +152,11 @@ Actual Apple Home pairing, UI presentation on your devices, and remote playback 
 
 ## GitHub releases
 
-For a new version, update package.json and the lockfile, add `releases/vX.Y.Z.md`, and commit the changes. Push an annotated `vX.Y.Z` tag matching the package version. The release workflow verifies the tag, runs the tests and child-bridge smoke check, builds the `.tgz`, and attaches it with `SHA256SUMS` to a GitHub release. It uses GitHub's workflow token; no personal token or npm credential is needed. A manual retry must select the version tag rather than a branch. The workflow does not publish to npm.
+For a new version, update package.json and the lockfile, add `releases/vX.Y.Z.md`, and commit the changes. Push an annotated `vX.Y.Z` tag matching the package version. The release workflow verifies the tag, runs the tests and child-bridge smoke check, builds the `.tgz`, and attaches it with `SHA256SUMS` to a GitHub release. It uses GitHub's workflow token; no personal token or npm credential is needed. After the GitHub release succeeds, the workflow downloads that exact archive, checks its SHA-256 checksum and package identity/version, and submits it with `npm stage publish` using npm trusted publishing (OIDC). It never runs `npm publish` or approves a staged package. A maintainer reviews and approves each version with 2FA in npm's **Staged Packages** tab. Already-published versions are skipped only when their archive integrity matches.
+
+One-time setup after the first npm version is approved: add a **GitHub Actions** trusted publisher in the npm package settings for user `wcoekaer`, repository `homebridge-tesla-powerpack`, workflow filename `release.yml`, and no environment. Allow **staged publishing only**; leave direct publishing and dist-tag management disabled. No npm token needs to be stored in GitHub. Until that trust is configured, automatic staging cannot authenticate.
+
+For a retry, run the **Release** workflow manually from `main` and enter the published stable release tag in its `tag` input. This reuses the release archive without rebuilding it. An npm staging failure does not remove the downloadable GitHub release.
 
 ## License and references
 
